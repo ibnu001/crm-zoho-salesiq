@@ -42,7 +42,11 @@ export default function Home() {
 
   const toggleZohoChat = () => {
     if (!isZohoVisible) return;
-    isOpen ? clickZohoCloseButton() : clickZohoOpenButton();
+    if (isOpen) {
+      clickZohoCloseButton();
+    } else {
+      clickZohoOpenButton();
+    }
   };
 
   // ✅ Detect Zoho availability + chat open state
